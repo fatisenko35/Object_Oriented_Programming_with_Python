@@ -133,19 +133,26 @@ class Person:
     def get_details(self):
         print(self.name, self.age)
 
+class Lang:
+    def __init__(self, langs):
+        self.langs = langs
 
-class Employee(Person):
-    def __init__(self, name, age, path):
+    def display_langs(self):
+        print(self.langs) 
+
+class Employee(Person, Lang):
+    def __init__(self, name, age, path, langs):
         # self.name = name
         # self.age = age
         super().__init__(name, age)
         self.path = path
-
+        # self.langs = langs
+        Lang.__init__(self, langs)
     #override
     def get_details(self):
         # print(self.name, self.age, self.path)
         super().get_details()
         print(self.path)   
 
-emp1 = Employee('Barry', 45, 'FS')
+emp1 = Employee('Barry', 45, 'FS', ['Python', 'JS'])
 emp1.get_details()
