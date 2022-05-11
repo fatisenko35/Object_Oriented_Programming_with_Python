@@ -156,3 +156,6 @@ class Employee(Person, Lang):
 
 emp1 = Employee('Barry', 45, 'FS', ['Python', 'JS'])
 emp1.get_details()
+emp1.display_langs()
+
+print(Employee.mro())
